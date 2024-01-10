@@ -1,0 +1,16 @@
+barbarian: seem tough aren't you #id:1f
+player: what do you want? #id:20
+barbarian: what's your name #id:21
+player: my name is of no intereset on you. I am who I am #id:22
+player: Listen here, just help me get outta here, then we're chillin #id:23
+barbarian: So you want my help, nah? Just tell me your name, and I'll tell you what you gotta do next #id:24
+player: FINE! My name is #id:25
+[text_input var="playerName"]
+barbarian: Alright [wave][color=cyan][i][b]{playerName}[/b][/i][/color][/wave]. I need food, find me some food and give it to me #id:26
+player: Does this nowhere island look like it has some food for you #id:27
+barbarian: Not very wise [wave][color=cyan][i][b]{playerName}[/b][/i][/color][/wave]. Can't you see??!. I am the owner of this alternative reality world. I can do whatever i want here #id:28
+player: Then why are you not giving food to yourself #id:29
+barbarian: You think yourself smart. I told you, ME WORLD ME RULE #id:2a
+barbarian: So you better get yourself some energy, AND DO WHAT I WANT! #id:2b
+player: (this guy is mad, I better find all of them foods) #id:2c
+[signal arg="advancePhase"]

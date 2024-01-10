@@ -1,0 +1,13 @@
+2,en,id,jp
+Text/11/text,HEY!! WHERE AM I!!??,HEI!!! DIMANA SAYA!!??,ここはどこ
+Text/12/text,"chill out, you are nowhere","tenang saja, kamu tidak dimana mana",落ち着いて、あなたはどこにもいません
+Text/13/text,"alright, but how do I get out from here","baiklah, tapi bagaimana caranya saya keluar dari sini",さて、でもどうやってここから出ればいいの?
+Text/14/text,"Its easy, just do what i want you to do, then you're going to be free... deal??","itu mudah, lakukan apa yang saya ingin anda lakukan, lalu kamu akan bebas, sepakat?",その簡単な、私があなたにしてほしいことをするだけ、そしてあなたは自由になるだろう...対処する。。
+Choice/15/text,yes,iya,はい
+Choice/15/disabled_text,,,
+Choice/16/text,no,tidak,いいえ
+Choice/16/disabled_text,,,
+Text/17/text,"shut up, you still need to play if you want to get out of here",diam! Kamu tetap harus bermain jika ingin keluar,黙れ、ここから出たいならまだ遊ばなきゃいけない
+Text/18/text,[wave]...,[wave]...,
+Text/19/text,"alright, first find a sword and destroy all of those dummys","baiklah, pertama cari pedang dan hancurkan semua boneka tersebut",よし、まず剣を見つけて、それらのダミーをすべて破壊してください
+Text/1a/text,alright,baiklah,さてさて

@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://bgqr1ob3hcjwg"
+
+[deps]
+
+files=["res://translations/dialogic_barbarian_3_translation.en.translation", "res://translations/dialogic_barbarian_3_translation.id.translation", "res://translations/dialogic_barbarian_3_translation.jp.translation"]
+
+source_file="res://translations/dialogic_barbarian_3_translation.csv"
+dest_files=["res://translations/dialogic_barbarian_3_translation.en.translation", "res://translations/dialogic_barbarian_3_translation.id.translation", "res://translations/dialogic_barbarian_3_translation.jp.translation"]
+
+[params]
+
+compress=true
+delimiter=0

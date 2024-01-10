@@ -1,0 +1,16 @@
+res://character/player/Player.tscn
+res://shaders/blur.gdshader
+res://assets/materials/m_water.gdshader
+res://assets/materials/m_water.tres
+res://assets/theme/MinimalUI.tres
+res://shaders/Fire/fire.tres
+res://scenes/map/new_fast_noise_lite.tres
+res://shaders/Fire/simpleParticles.tres
+res://assets/materials/m_grass.tres
+res://assets/materials/m_pine_leaves.tres
+res://assets/materials/m_bush.tres
+res://motion_blur/moblur_shader.gdshader
+res://scenes/main_menu.tscn
+res://scenes/main.tscn
+res://scenes/card_pic.tscn
+res://objects/Sword.tscn

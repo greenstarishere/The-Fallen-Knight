@@ -1,0 +1,15 @@
+player: HEY!! WHERE AM I!!?? #id:11
+barbarian: chill out, you are nowhere #id:12
+player: alright, but how do I get out from here #id:13
+barbarian: Its easy, just do what i want you to do, then you're going to be free... deal?? #id:14
+- yes #id:15
+	set {wantToPlay} = 1
+- no #id:16
+	set {wantToPlay} = 0
+if {wantToPlay} == 0:
+	barbarian: shut up, you still need to play if you want to get out of here #id:17
+	player: [wave]... #id:18
+else:
+	barbarian: alright, first find a sword and destroy all of those dummys #id:19
+	player: alright #id:1a
+[signal arg="advancePhase"]

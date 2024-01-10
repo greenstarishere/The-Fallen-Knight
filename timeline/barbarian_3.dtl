@@ -1,0 +1,40 @@
+barbarian: I need 5 of them #id:2d
+if {croissants} == 0:
+	player: haven't found any of them yet #id:2e
+	barbarian: start looking at those rocks #id:2f
+if {croissants} > 0:
+	if {croissants} < 5:
+		player: aight, hold on i only got {croissants} #id:30
+	else:
+		player: Sure, here they are... #id:31
+		barbarian: Great, thanks #id:32
+		player: thanks?? #id:33
+		barbarian: yea! thanks #id:34
+		player: [color=red]OH CMON! #id:35
+		barbarian: WHAT?! #id:36
+		player: you have promised to help me #id:37
+		barbarian: really? alright #id:38
+		player: okay, now what? #id:39
+		barbarian: Congratulations {playerName}. you have passed the test #id:3a
+		player: the test of what? #id:3b
+		barbarian: the test of yourself #id:3c
+		player: what is that supposed to mean #id:3d
+		barbarian: you've lost againts the barbarian, maybe the i'm a bit familiar to you? #id:3e
+		player: you're the one who beats me aren't you? #id:3f
+		barbarian: yes, but im not him. I'm you #id:40
+		player: HUH? alright that's too much to fit in my head #id:41
+		barbarian: I'm your imagination, this world is you #id:42
+		player: I get it, and why do i make those test #id:43
+		barbarian: your soul wants you to believe in yourself more, you're gifted {playerName} #id:44
+		player: so I passed my own test yea? #id:45
+		barbarian: that's right, do you want me to explain what was the quest for? #id:46
+		player: mhmm... sure #id:47
+		barbarian: finding a sword means toughness #id:48
+		barbarian: wiping out dummys means braveness #id:49
+		barbarian: collecting foods means humbleness #id:4a
+		barbarian: now if you want to get out... #id:4b
+		barbarian: you must reach the [b]symbol of power[/b] #id:4c
+		player: what is that? #id:4d
+		barbarian: that's your problem #id:4e
+		[signal arg="advancePhase"]
+		[signal arg="endGame"]
