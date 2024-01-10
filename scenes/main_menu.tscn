@@ -1,0 +1,1252 @@
+[gd_scene load_steps=89 format=3 uid="uid://df2cyapi8hjav"]
+
+[ext_resource type="Script" path="res://scenes/mainMenu.gd" id="1_1psuh"]
+[ext_resource type="VideoStream" path="res://assets/splashScreen/splash.ogv" id="2_uwyom"]
+[ext_resource type="VideoStream" path="res://assets/splashScreen/splashTemp.ogv" id="3_1c05s"]
+[ext_resource type="Script" path="res://scenes/menuControls.gd" id="3_cyiqp"]
+[ext_resource type="Script" path="res://scenes/splash1.gd" id="3_vtayq"]
+[ext_resource type="Material" uid="uid://c7mw5tryqfggw" path="res://assets/materials/m_water.tres" id="4_6roh2"]
+[ext_resource type="PackedScene" uid="uid://bum8ckgrg66qg" path="res://scenes/card_pic.tscn" id="4_cihdg"]
+[ext_resource type="Script" path="res://scenes/cards.gd" id="4_vwgjt"]
+[ext_resource type="Texture2D" uid="uid://dxsatrce2g2tc" path="res://cardPic/ijoel.jpg" id="5_5xd2n"]
+[ext_resource type="Script" path="res://scenes/splash2.gd" id="5_j814r"]
+[ext_resource type="Script" path="res://addons/proton_scatter/src/stack/modifier_stack.gd" id="5_opihe"]
+[ext_resource type="Script" path="res://scenes/water.gd" id="5_v261x"]
+[ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/create_inside_grid.gd" id="6_7eo5h"]
+[ext_resource type="Script" path="res://addons/proton_scatter/src/scatter.gd" id="6_hps5i"]
+[ext_resource type="Texture2D" uid="uid://cny13cdq6t8sr" path="res://cardPic/melati.jpg" id="6_o40lu"]
+[ext_resource type="Texture2D" uid="uid://0f5u3jke3psk" path="res://cardPic/oped.png" id="6_vju73"]
+[ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/randomize_transforms.gd" id="7_mrlbb"]
+[ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/randomize_rotation.gd" id="8_8vssd"]
+[ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/create_inside_random.gd" id="9_wnupt"]
+[ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/project_on_geometry.gd" id="10_xbb0b"]
+[ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/relax.gd" id="11_7fkuw"]
+[ext_resource type="Script" path="res://addons/proton_scatter/src/scatter_item.gd" id="11_ixl6f"]
+[ext_resource type="Script" path="res://addons/proton_scatter/src/scatter_shape.gd" id="12_rsitf"]
+[ext_resource type="Script" path="res://addons/proton_scatter/src/shapes/path_shape.gd" id="13_y1nbw"]
+[ext_resource type="Script" path="res://addons/proton_scatter/src/shapes/box_shape.gd" id="16_qgcdy"]
+[ext_resource type="FastNoiseLite" uid="uid://dcs44dr6m8tfl" path="res://scenes/map/new_fast_noise_lite.tres" id="18_u3n6g"]
+[ext_resource type="PackedScene" uid="uid://bxbh3j4qq3cef" path="res://scenes/campfire.tscn" id="19_vwki1"]
+[ext_resource type="PackedScene" uid="uid://8ay5rlrutcmx" path="res://assets/large_rock.tscn" id="21_0pekr"]
+[ext_resource type="Theme" uid="uid://cddj64s53on3i" path="res://assets/theme/MinimalUI.tres" id="24_t6gre"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_soure"]
+bg_color = Color(1, 0, 0, 1)
+corner_radius_bottom_left = 15
+
+[sub_resource type="Animation" id="Animation_ylp0a"]
+resource_name = "RESET"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("cardPic:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-366, 344)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("cardPic:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("cardPic2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(358, 1122)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("cardPic2:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("cardPic3:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1942, 613)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("cardPic3:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("cardPic:position:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-366, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("cardPic:position:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(344, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("cardPic2:position:x")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(358, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("cardPic2:position:y")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1122, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("cardPic3:position:x")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1942, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/11/type = "bezier"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("cardPic3:position:y")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(613, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_6kclw"]
+resource_name = "pop"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("cardPic:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-366, -0.25, 0, 0.5, 0, -83, -0.5, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("cardPic:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(344, -0.25, 0, 0.5, 0, 262, -0.5, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("cardPic:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.5, 0, 0.445059, -0.5, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("cardPic2:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(358, -0.25, 0, 0.5, 0, 375, -0.5, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("cardPic2:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1122, -0.25, 0, 0.5, -2.1875, 771, -0.5, 0.357117, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("cardPic3:position:x")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1942, -0.25, 0, 0.5, 0, 1653, -0.5, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("cardPic3:position:y")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(613, -0.25, 0, 0.5, 0, 570, -0.5, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("cardPic3:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.5, 0, -0.383972, -0.5, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("cardPic2:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.5, -0.00537134, -0.235619, -0.5, 0.000428274, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="Animation" id="Animation_y5vnf"]
+resource_name = "pop_1"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("cardPic:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-366, -0.25, 0, 0.5, 0, -83, -0.5, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("cardPic:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(344, -0.25, 0, 0.5, 0, 262, -0.5, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("cardPic:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.5, 0, 0.445059, -0.5, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="Animation" id="Animation_8chpu"]
+resource_name = "pop_2"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("cardPic2:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(358, -0.25, 0, 0.5, 0, 375, -0.5, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("cardPic2:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1122, -0.25, 0, 0.5, -2.1875, 771, -0.5, 0.357117, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("cardPic2:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.5, -0.00537134, -0.235619, -0.5, 0.000428274, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="Animation" id="Animation_km8dy"]
+resource_name = "pop_3"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("cardPic3:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1942, -0.25, 0, 0.5, 0, 1653, -0.5, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("cardPic3:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(613, -0.25, 0, 0.5, 0, 570, -0.5, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("cardPic3:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.5, 0, -0.383972, -0.5, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j5407"]
+_data = {
+"RESET": SubResource("Animation_ylp0a"),
+"pop": SubResource("Animation_6kclw"),
+"pop_1": SubResource("Animation_y5vnf"),
+"pop_2": SubResource("Animation_8chpu"),
+"pop_3": SubResource("Animation_km8dy")
+}
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qhmo3"]
+sky_top_color = Color(0.435294, 0.407843, 0.6, 1)
+sky_horizon_color = Color(0.721569, 0.635294, 0.596078, 1)
+ground_bottom_color = Color(0.721569, 0.635294, 0.596078, 1)
+ground_horizon_color = Color(0.721569, 0.635294, 0.596078, 1)
+
+[sub_resource type="Sky" id="Sky_7u1fx"]
+sky_material = SubResource("ProceduralSkyMaterial_qhmo3")
+
+[sub_resource type="Environment" id="Environment_0i8r2"]
+background_mode = 2
+sky = SubResource("Sky_7u1fx")
+tonemap_mode = 2
+ssr_enabled = true
+sdfgi_enabled = true
+sdfgi_use_occlusion = true
+glow_enabled = true
+fog_light_color = Color(0.866667, 0.803922, 0.760784, 1)
+fog_sky_affect = 0.0
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.03
+volumetric_fog_albedo = Color(1, 0.843137, 0.729412, 1)
+volumetric_fog_anisotropy = 0.4
+volumetric_fog_ambient_inject = 1.0
+adjustment_enabled = true
+adjustment_saturation = 1.33
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_sqy0o"]
+material = ExtResource("4_6roh2")
+size = Vector2(500, 500)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o4vq8"]
+size = Vector3(300, 1, 300)
+
+[sub_resource type="Resource" id="Resource_vwb1r"]
+script = ExtResource("6_7eo5h")
+spacing = Vector3(1.5, 2, 1)
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = true
+reference_frame = 0
+
+[sub_resource type="Resource" id="Resource_6gkmh"]
+script = ExtResource("7_mrlbb")
+position = Vector3(0.173, 0.222, 0.918)
+rotation = Vector3(10, 360, 10)
+scale = Vector3(1.201, 0.399, 1.183)
+enabled = true
+override_global_seed = true
+custom_seed = 10
+restrict_height = false
+reference_frame = 2
+
+[sub_resource type="Resource" id="Resource_ra85i"]
+script = ExtResource("8_8vssd")
+rotation = Vector3(360, 0, 360)
+snap_angle = Vector3(180, 0, 180)
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = false
+reference_frame = 2
+
+[sub_resource type="Resource" id="Resource_qd6l3"]
+script = ExtResource("5_opihe")
+stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_vwb1r"), SubResource("Resource_6gkmh"), SubResource("Resource_ra85i")])
+
+[sub_resource type="Curve3D" id="Curve3D_7607q"]
+_data = {
+"points": PackedVector3Array(4.13081, 0, 2.42354, -4.13081, 0, -2.42354, -3.12892, 0, 6.05251, -0.670045, 0, 4.66822, 0.670045, 0, -4.66822, -9.89261, 0, -6.49702, -1.72547, 9.53674e-07, -3.56969, 1.72547, -9.53674e-07, 3.56969, 7.65048, 0, -21.7117, 0, 0, 0, 0, 0, 0, -4.85401, 0, -6.1506, 0, 0, 0, 0, 0, 0, 0.829587, 0, 0.0705214, 0, 0, 0, 0, 0, 0, 0.248665, 0, 6.2296, 0, 0, 0, 0, 0, 0, -0.851285, 0, 6.8788),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 7
+
+[sub_resource type="Resource" id="Resource_6cbaj"]
+script = ExtResource("13_y1nbw")
+closed = true
+thickness = 0.0
+curve = SubResource("Curve3D_7607q")
+
+[sub_resource type="Curve3D" id="Curve3D_dvsa8"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.970393, 0, -3.98004, 0, 0, 0, 0, 0, 0, -1.77869, 0, 2.73896, 0, 0, 0, 0, 0, 0, 6.65795, 0, 9.8116, 0, 0, 0, 0, 0, 0, 15.7008, 0, 8.39707, 0, 0, 0, 0, 0, 0, 30.7209, 0, 0.616834, 0, 0, 0, 0, 0, 0, 36.2847, 0, -16.3842, 0, 0, 0, 0, 0, 0, 28.8618, 0, -17.6901, 0, 0, 0, 0, 0, 0, 23.9132, 0, -6.55577, 0, 0, 0, 0, 0, 0, 11.1294, 0, 1.62314, 0, 0, 0, 0, 0, 0, 2.81303, 0, -2.91306),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 10
+
+[sub_resource type="Resource" id="Resource_wcj63"]
+script = ExtResource("13_y1nbw")
+closed = true
+thickness = 0.0
+curve = SubResource("Curve3D_dvsa8")
+
+[sub_resource type="Curve3D" id="Curve3D_rajwp"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 25.1419, 0, -6.69555, 0, 0, 0, 0, 0, 0, 30.9201, 0, -10.9102, 0, 0, 0, 0, 0, 0, 23.6464, 0, -18.2519, 0, 0, 0, 0, 0, 0, 12.0221, 0, -14.717, 0, 0, 0, 0, 0, 0, 7.31795, 0, -5.39527, 0, 0, 0, 0, 0, 0, 12.7577, 0, 1.57246, 0, 0, 0, 0, 0, 0, 14.9995, 0, -6.95877, 0, 0, 0, 0, 0, 0, 21.7973, 0, -10.4257, 0, 0, 0, 0, 0, 0, 22.0013, 0, -3.76379, 0, 0, 0, 0, 0, 0, 26.0607, 0, -4.16099, 0, 0, 0, 0, 0, 0, 26.6248, 0, -5.83801),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 11
+
+[sub_resource type="Resource" id="Resource_25r0a"]
+script = ExtResource("13_y1nbw")
+closed = true
+thickness = 0.0
+curve = SubResource("Curve3D_rajwp")
+
+[sub_resource type="Curve3D" id="Curve3D_c7l3l"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 6.29829, 0, -26.2517, 0, 0, 0, 0, 0, 0, 11.1166, 0, -20.1256, 0, 0, 0, 0, 0, 0, 21.4416, 0, -21.9841, 0, 0, 0, 0, 0, 0, 25.3651, 0, -36.4391, 0, 0, 0, 0, 0, 0, 19.0325, 0, -42.0834, 0, 0, 0, 0, 0, 0, 19.4455, 0, -35.2689, 0, 0, 0, 0, 0, 0, 19.5143, 0, -27.1466, 0, 0, 0, 0, 0, 0, 10.4971, 0, -28.4544, 0, 0, 0, 0, 0, 0, 9.25813, 0, -39.8119, 0, 0, 0, 0, 0, 0, 4.85279, 0, -37.3339, 0, 0, 0, 0, 0, 0, -0.447371, 0, -25.9076, 0, 0, 0, 0, 0, 0, -10.91, 0, -18.2671, 0, 0, 0, 0, 0, 0, 3.14186, 0, -23.9654),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 13
+
+[sub_resource type="Resource" id="Resource_xso5j"]
+script = ExtResource("13_y1nbw")
+closed = true
+thickness = 0.0
+curve = SubResource("Curve3D_c7l3l")
+
+[sub_resource type="Resource" id="Resource_d05ja"]
+script = ExtResource("9_wnupt")
+amount = 75000
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = true
+reference_frame = 1
+
+[sub_resource type="Resource" id="Resource_riwab"]
+script = ExtResource("7_mrlbb")
+position = Vector3(0.2, 0, 0.2)
+rotation = Vector3(20, 360, 20)
+scale = Vector3(6, 5, 6)
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = false
+reference_frame = 2
+
+[sub_resource type="Resource" id="Resource_jxuq4"]
+script = ExtResource("10_xbb0b")
+ray_direction = Vector3(0, -1, 0)
+ray_length = 10.0
+ray_offset = 1.0
+remove_points_on_miss = true
+align_with_collision_normal = false
+max_slope = 20.0
+collision_mask = 1
+exclude_mask = 0
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = false
+reference_frame = 0
+
+[sub_resource type="Resource" id="Resource_juns1"]
+script = ExtResource("5_opihe")
+stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_d05ja"), SubResource("Resource_riwab"), SubResource("Resource_jxuq4")])
+
+[sub_resource type="Resource" id="Resource_eo3er"]
+script = ExtResource("16_qgcdy")
+size = Vector3(14.4217, 1, 20.4832)
+
+[sub_resource type="Curve3D" id="Curve3D_25ox1"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 9.32792, 5.96046e-08, -18.0513, 2.61264, -4.76837e-07, -0.523331, -2.61264, 4.76837e-07, 0.523331, 3.6654, -4.17233e-07, -16.809, -0.0227089, 0, 1.01022, 0.0227089, 0, -1.01022, -0.834799, 5.96046e-08, -18.0559, 0, 0, 0, 0, 0, 0, 2.90041, 5.96046e-08, -23.5819),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[sub_resource type="Resource" id="Resource_xeetb"]
+script = ExtResource("13_y1nbw")
+closed = true
+thickness = 0.0
+curve = SubResource("Curve3D_25ox1")
+
+[sub_resource type="Curve3D" id="Curve3D_anmgx"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 3.65427, 4.91738e-05, 2.03667, 0, 0, 0, 0, 0, 0, 1.52363, 4.91738e-05, 10.628, 0, 0, 0, 0, 0, 0, 10.7335, 4.91738e-05, 17.0199, 0, 0, 0, 0, 0, 0, 32.4523, 4.91738e-05, 14.0645, 0, 0, 0, 0, 0, 0, 41.4559, 4.91738e-05, 3.68619, 0, 0, 0, 0, 0, 0, 42.6244, 4.91738e-05, -11.1596, 0, 0, 0, 0, 0, 0, 32.521, 4.91738e-05, -12.5342, 0, 0, 0, 0, 0, 0, 26.2665, 4.91738e-05, -0.987467, 0, 0, 0, 0, 0, 0, 15.6821, 4.91738e-05, 6.50414),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 9
+
+[sub_resource type="Resource" id="Resource_b6svt"]
+script = ExtResource("13_y1nbw")
+closed = true
+thickness = 0.0
+curve = SubResource("Curve3D_anmgx")
+
+[sub_resource type="Resource" id="Resource_w6s4r"]
+script = ExtResource("9_wnupt")
+amount = 100
+enabled = true
+override_global_seed = false
+custom_seed = 30
+restrict_height = false
+reference_frame = 1
+
+[sub_resource type="Resource" id="Resource_cjgtw"]
+script = ExtResource("11_7fkuw")
+iterations = 5
+offset_step = 0.05
+consecutive_step_multiplier = 0.5
+use_computeshader = true
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = true
+reference_frame = 0
+
+[sub_resource type="Resource" id="Resource_girbl"]
+script = ExtResource("10_xbb0b")
+ray_direction = Vector3(0, -1, 0)
+ray_length = 10.0
+ray_offset = 1.0
+remove_points_on_miss = true
+align_with_collision_normal = false
+max_slope = 90.0
+collision_mask = 1
+exclude_mask = 0
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = false
+reference_frame = 0
+
+[sub_resource type="Resource" id="Resource_34iju"]
+script = ExtResource("7_mrlbb")
+position = Vector3(0, 0, 0)
+rotation = Vector3(0, 0, 0)
+scale = Vector3(3, 3, 3)
+enabled = true
+override_global_seed = true
+custom_seed = 30
+restrict_height = false
+reference_frame = 2
+
+[sub_resource type="Resource" id="Resource_6oftk"]
+script = ExtResource("5_opihe")
+stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_w6s4r"), SubResource("Resource_cjgtw"), SubResource("Resource_girbl"), SubResource("Resource_34iju")])
+
+[sub_resource type="Curve3D" id="Curve3D_p7x2e"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -3.40187, 0, 7.54984, 0, 0, 0, 0, 0, 0, -7.75126, 0, 4.65059, 0, 0, 0, 0, 0, 0, -7.91946, 0, -1.51705, 0, 0, 0, 0, 0, 0, -9.3212, 0, -8.35752, 0, 0, 0, 0, 0, 0, -4.35017, 0, -11.0119, 0, 0, 0, 0, 0, 0, -5.05992, 0, -7.01185, 0, 0, 0, 0, 0, 0, -0.954166, 0, 4.71895, 0, 0, 0, 0, 0, 0, -0.93572, 0, 6.22371),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 8
+
+[sub_resource type="Resource" id="Resource_q0fjp"]
+script = ExtResource("13_y1nbw")
+closed = true
+thickness = 0.0
+curve = SubResource("Curve3D_p7x2e")
+
+[sub_resource type="Curve3D" id="Curve3D_abex3"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.982804, 0, 11.6805, 0, 0, 0, 0, 0, 0, 6.35377, 0, 17.4122, 0, 0, 0, 0, 0, 0, 17.0148, 0, 17.5845, 0, 0, 0, 0, 0, 0, 34.1737, 0, 8.04917, 0, 0, 0, 0, 0, 0, 33.551, 0, 17.9083, 0, 0, 0, 0, 0, 0, 9.62093, 0, 25.8954, 0, 0, 0, 0, 0, 0, -1.89979, 0, 15.5784),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 7
+
+[sub_resource type="Resource" id="Resource_sryya"]
+script = ExtResource("13_y1nbw")
+closed = true
+thickness = 0.0
+curve = SubResource("Curve3D_abex3")
+
+[sub_resource type="Resource" id="Resource_jtpnf"]
+script = ExtResource("9_wnupt")
+amount = 10000
+enabled = true
+override_global_seed = true
+custom_seed = 7
+restrict_height = true
+reference_frame = 1
+
+[sub_resource type="Resource" id="Resource_jj37i"]
+script = ExtResource("7_mrlbb")
+position = Vector3(0, 0, 0)
+rotation = Vector3(360, 360, 360)
+scale = Vector3(1.5, 1.5, 1.5)
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = false
+reference_frame = 2
+
+[sub_resource type="Resource" id="Resource_k0mjk"]
+script = ExtResource("10_xbb0b")
+ray_direction = Vector3(0, -1, 0)
+ray_length = 10.0
+ray_offset = 1.0
+remove_points_on_miss = true
+align_with_collision_normal = false
+max_slope = 90.0
+collision_mask = 1
+exclude_mask = 0
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = false
+reference_frame = 0
+
+[sub_resource type="Resource" id="Resource_6xr03"]
+script = ExtResource("5_opihe")
+stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_jtpnf"), SubResource("Resource_jj37i"), SubResource("Resource_k0mjk")])
+
+[sub_resource type="Resource" id="Resource_68cvd"]
+script = ExtResource("16_qgcdy")
+size = Vector3(55.9762, 0.642154, 43.748)
+
+[sub_resource type="Resource" id="Resource_qwsvl"]
+script = ExtResource("9_wnupt")
+amount = 100
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = true
+reference_frame = 1
+
+[sub_resource type="Resource" id="Resource_cm4gt"]
+script = ExtResource("7_mrlbb")
+position = Vector3(0.15, 0.15, 0.15)
+rotation = Vector3(20, 360, 20)
+scale = Vector3(0.1, 0.1, 0.1)
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = false
+reference_frame = 2
+
+[sub_resource type="Resource" id="Resource_klb0y"]
+script = ExtResource("11_7fkuw")
+iterations = 3
+offset_step = 0.2
+consecutive_step_multiplier = 0.75
+use_computeshader = true
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = true
+reference_frame = 0
+
+[sub_resource type="Resource" id="Resource_jgxpu"]
+script = ExtResource("10_xbb0b")
+ray_direction = Vector3(0, -1, 0)
+ray_length = 5.0
+ray_offset = 5.0
+remove_points_on_miss = false
+align_with_collision_normal = false
+max_slope = 90.0
+collision_mask = 1
+exclude_mask = 0
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = false
+reference_frame = 0
+
+[sub_resource type="Resource" id="Resource_842io"]
+script = ExtResource("5_opihe")
+stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_qwsvl"), SubResource("Resource_cm4gt"), SubResource("Resource_klb0y"), SubResource("Resource_jgxpu")])
+
+[sub_resource type="Curve3D" id="Curve3D_sse4b"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 2.41596, 0, 3.55372, 0, 0, 0, 0, 0, 0, 0.56413, 4.76837e-07, -2.89006, 0, 0, 0, 0, 0, 0, 0.643404, 0, -5.52636, 0, 0, 0, 0, 0, 0, -1.94214, 0, -4.07288, 0, 0, 0, 0, 0, 0, -0.812988, 0, 3.85457, 0, 0, 0, 0, 0, 0, 4.29714, 0, 8.99662, 0, 0, 0, 0, 0, 0, 4.98394, 0, 6.47755),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 7
+
+[sub_resource type="Resource" id="Resource_yuq03"]
+script = ExtResource("13_y1nbw")
+closed = true
+thickness = 0.0
+curve = SubResource("Curve3D_sse4b")
+
+[sub_resource type="Curve3D" id="Curve3D_80gtl"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 30.1699, 0, 2.93712, 0, 0, 0, 0, 0, 0, 33.196, 0, -0.898769, 0, 0, 0, 0, 0, 0, 34.3104, 0, 3.55119, 0, 0, 0, 0, 0, 0, 27.3742, 0, 16.3325, 0, 0, 0, 0, 0, 0, 11.9121, 0, 19.9956, 0, 0, 0, 0, 0, 0, 8.03911, 0, 21.7341, 0, 0, 0, 0, 0, 0, 1.23211, 0, 17.4976, 0, 0, 0, 0, 0, 0, 3.89755, 0, 15.3405, 0, 0, 0, 0, 0, 0, 13.1606, 0, 17.9421, 0, 0, 0, 0, 0, 0, 26.6888, 0, 12.4218),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 10
+
+[sub_resource type="Resource" id="Resource_b8axd"]
+script = ExtResource("13_y1nbw")
+closed = true
+thickness = 0.0
+curve = SubResource("Curve3D_80gtl")
+
+[sub_resource type="Gradient" id="Gradient_vpt0i"]
+offsets = PackedFloat32Array(0.554422, 0.683673)
+
+[sub_resource type="NoiseTexture3D" id="NoiseTexture3D_ytqil"]
+seamless = true
+color_ramp = SubResource("Gradient_vpt0i")
+noise = ExtResource("18_u3n6g")
+
+[sub_resource type="FogMaterial" id="FogMaterial_8ngmp"]
+density = 0.4
+albedo = Color(0.423529, 0.698039, 0.941176, 1)
+density_texture = SubResource("NoiseTexture3D_ytqil")
+
+[node name="mainMenu" type="Node3D"]
+script = ExtResource("1_1psuh")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("24_t6gre")
+script = ExtResource("3_cyiqp")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 300
+theme_override_constants/margin_top = 150
+theme_override_constants/margin_right = 300
+theme_override_constants/margin_bottom = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 150
+
+[node name="Label" type="Label" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("24_t6gre")
+theme_override_font_sizes/font_size = 228
+text = "Fallen Soldier"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/margin_left = 300
+theme_override_constants/margin_right = 300
+theme_override_constants/margin_bottom = 250
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="start" type="Button" parent="Control/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 28
+text = "_START"
+
+[node name="aboutUs" type="Button" parent="Control/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 26
+text = "_ABOUT_US"
+
+[node name="settings" type="Button" parent="Control/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_default_cursor_shape = 2
+theme_override_font_sizes/font_size = 26
+text = "_SETTINGS"
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -80.0
+offset_right = 297.0
+offset_bottom = -18.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+text = "by ranjanova"
+
+[node name="SettingsPanel" type="AspectRatioContainer" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+ratio = 1.7778
+
+[node name="CenterContainer" type="CenterContainer" parent="Control/SettingsPanel"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/SettingsPanel/CenterContainer"]
+custom_minimum_size = Vector2(500, 600)
+layout_mode = 2
+
+[node name="panel" type="Panel" parent="Control/SettingsPanel/CenterContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/SettingsPanel/CenterContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="top" type="HBoxContainer" parent="Control/SettingsPanel/CenterContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="Control/SettingsPanel/CenterContainer/MarginContainer/VBoxContainer/top"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 36
+text = "_SETTINGS"
+horizontal_alignment = 1
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Control/SettingsPanel/CenterContainer/MarginContainer/VBoxContainer/top"]
+layout_mode = 2
+stretch_mode = 3
+alignment_horizontal = 2
+
+[node name="exitButton" type="Button" parent="Control/SettingsPanel/CenterContainer/MarginContainer/VBoxContainer/top/AspectRatioContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_soure")
+text = "x"
+
+[node name="HSeparator" type="HSeparator" parent="Control/SettingsPanel/CenterContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/SettingsPanel/CenterContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 20
+
+[node name="bottom" type="GridContainer" parent="Control/SettingsPanel/CenterContainer/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/h_separation = 10
+columns = 2
+
+[node name="resLabel" type="Label" parent="Control/SettingsPanel/CenterContainer/MarginContainer/VBoxContainer/MarginContainer/bottom"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "_RESOLUTION"
+horizontal_alignment = 2
+
+[node name="resOption" type="OptionButton" parent="Control/SettingsPanel/CenterContainer/MarginContainer/VBoxContainer/MarginContainer/bottom"]
+layout_mode = 2
+size_flags_horizontal = 3
+item_count = 2
+selected = 0
+allow_reselect = true
+popup/item_0/text = "1920 x 1080"
+popup/item_0/id = 0
+popup/item_1/text = "1280 x 720"
+popup/item_1/id = 1
+
+[node name="screenLabel" type="Label" parent="Control/SettingsPanel/CenterContainer/MarginContainer/VBoxContainer/MarginContainer/bottom"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "_WINDOW_MODE"
+horizontal_alignment = 2
+
+[node name="screenOption" type="OptionButton" parent="Control/SettingsPanel/CenterContainer/MarginContainer/VBoxContainer/MarginContainer/bottom"]
+layout_mode = 2
+size_flags_horizontal = 3
+item_count = 2
+selected = 0
+allow_reselect = true
+popup/item_0/text = "fullscreen"
+popup/item_0/id = 0
+popup/item_1/text = "windowed"
+popup/item_1/id = 1
+
+[node name="langLabel" type="Label" parent="Control/SettingsPanel/CenterContainer/MarginContainer/VBoxContainer/MarginContainer/bottom"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "_LANGUAGE"
+horizontal_alignment = 2
+
+[node name="langOption" type="OptionButton" parent="Control/SettingsPanel/CenterContainer/MarginContainer/VBoxContainer/MarginContainer/bottom"]
+layout_mode = 2
+size_flags_horizontal = 3
+item_count = 3
+selected = 0
+allow_reselect = true
+popup/item_0/text = "English"
+popup/item_0/id = 0
+popup/item_1/text = "Indonesia"
+popup/item_1/id = 1
+popup/item_2/text = "Japanese"
+popup/item_2/id = 2
+
+[node name="cards" type="Control" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1920.0
+offset_bottom = -1080.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("4_vwgjt")
+
+[node name="cardPic" parent="Control/cards" instance=ExtResource("4_cihdg")]
+offset_left = -366.0
+offset_top = 344.0
+offset_right = -16.0
+offset_bottom = 843.997
+pivot_offset = Vector2(350, 500)
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+cardPicture = ExtResource("6_vju73")
+cardName = "Obed Bari T."
+cardNim = "707082330166"
+
+[node name="cardPic2" parent="Control/cards" instance=ExtResource("4_cihdg")]
+offset_left = 358.0
+offset_top = 1122.0
+offset_right = 708.001
+offset_bottom = 1622.0
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+cardPicture = ExtResource("5_5xd2n")
+cardName = "Mierza Azizoel H."
+cardNim = "707082300120"
+
+[node name="cardPic3" parent="Control/cards" instance=ExtResource("4_cihdg")]
+offset_left = 1942.0
+offset_top = 613.0
+offset_right = 2292.01
+offset_bottom = 1113.0
+pivot_offset = Vector2(350, 500)
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+cardPicture = ExtResource("6_o40lu")
+cardName = "Melati Semeru"
+cardNim = "707082300141"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control/cards"]
+libraries = {
+"": SubResource("AnimationLibrary_j5407")
+}
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+ratio = 1.7778
+
+[node name="splash1" type="VideoStreamPlayer" parent="AspectRatioContainer"]
+layout_mode = 2
+stream = ExtResource("2_uwyom")
+autoplay = true
+expand = true
+script = ExtResource("3_vtayq")
+
+[node name="splash2" type="VideoStreamPlayer" parent="AspectRatioContainer"]
+layout_mode = 2
+stream = ExtResource("3_1c05s")
+expand = true
+script = ExtResource("5_j814r")
+
+[node name="Main" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Main"]
+environment = SubResource("Environment_0i8r2")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Main"]
+transform = Transform3D(0.965016, -0.0410154, 0.258961, 0.0282617, 0.998206, 0.0527835, -0.260662, -0.0436182, 0.964444, 0.234576, 1.65398, -5.59269)
+light_color = Color(1, 0.956863, 0.788235, 1)
+shadow_enabled = true
+
+[node name="water" type="MeshInstance3D" parent="Main"]
+mesh = SubResource("PlaneMesh_sqy0o")
+script = ExtResource("5_v261x")
+
+[node name="Area3D" type="Area3D" parent="Main/water"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Main/water/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.20733, 0)
+shape = SubResource("BoxShape3D_o4vq8")
+
+[node name="MainGround" type="Node3D" parent="Main"]
+process_mode = 3
+script = ExtResource("6_hps5i")
+render_mode = 1
+modifier_stack = SubResource("Resource_qd6l3")
+Performance/use_chunks = true
+Performance/chunk_dimensions = Vector3(15, 15, 15)
+
+[node name="ScatterItem" type="Node3D" parent="Main/MainGround"]
+script = ExtResource("11_ixl6f")
+source_scale_multiplier = 0.4
+path = "res://assets/large_rock.tscn"
+
+[node name="PathShape" type="Node3D" parent="Main/MainGround"]
+script = ExtResource("12_rsitf")
+shape = SubResource("Resource_6cbaj")
+
+[node name="ScatterShape" type="Node3D" parent="Main/MainGround"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13)
+script = ExtResource("12_rsitf")
+shape = SubResource("Resource_wcj63")
+
+[node name="ScatterShape2" type="Node3D" parent="Main/MainGround"]
+script = ExtResource("12_rsitf")
+shape = SubResource("Resource_25r0a")
+
+[node name="ScatterShape3" type="Node3D" parent="Main/MainGround"]
+script = ExtResource("12_rsitf")
+shape = SubResource("Resource_xso5j")
+
+[node name="Grass" type="Node3D" parent="Main"]
+process_mode = 3
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.53694, 0.590527, 6.38557)
+script = ExtResource("6_hps5i")
+scatter_parent = NodePath("../MainGround")
+modifier_stack = SubResource("Resource_juns1")
+Performance/use_chunks = true
+Performance/chunk_dimensions = Vector3(15, 15, 15)
+
+[node name="ScatterItem" type="Node3D" parent="Main/Grass"]
+script = ExtResource("11_ixl6f")
+source_scale_multiplier = 0.3
+path = "res://assets/grass_2.tscn"
+
+[node name="ScatterShape" type="Node3D" parent="Main/Grass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.12993, 0, -8.494)
+script = ExtResource("12_rsitf")
+shape = SubResource("Resource_eo3er")
+
+[node name="ScatterShape2" type="Node3D" parent="Main/Grass"]
+script = ExtResource("12_rsitf")
+negative = true
+shape = SubResource("Resource_xeetb")
+
+[node name="ScatterShape3" type="Node3D" parent="Main/Grass"]
+script = ExtResource("12_rsitf")
+shape = SubResource("Resource_b6svt")
+
+[node name="Trees" type="Node3D" parent="Main"]
+process_mode = 3
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.64893, 0, -0.774464)
+script = ExtResource("6_hps5i")
+render_mode = 1
+scatter_parent = NodePath("../MainGround")
+modifier_stack = SubResource("Resource_6oftk")
+Performance/use_chunks = true
+Performance/chunk_dimensions = Vector3(15, 15, 15)
+
+[node name="ScatterItem" type="Node3D" parent="Main/Trees"]
+script = ExtResource("11_ixl6f")
+source_scale_multiplier = 0.615
+path = "res://assets/pine_tree.tscn"
+
+[node name="PathShape" type="Node3D" parent="Main/Trees"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0376822, 0, -0.0782702)
+script = ExtResource("12_rsitf")
+shape = SubResource("Resource_q0fjp")
+
+[node name="ScatterShape" type="Node3D" parent="Main/Trees"]
+script = ExtResource("12_rsitf")
+shape = SubResource("Resource_sryya")
+
+[node name="SmallRocks" type="Node3D" parent="Main"]
+process_mode = 3
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.02869, 0.624608, -25.8609)
+script = ExtResource("6_hps5i")
+scatter_parent = NodePath("../MainGround")
+modifier_stack = SubResource("Resource_6xr03")
+Performance/use_chunks = true
+Performance/chunk_dimensions = Vector3(15, 15, 15)
+
+[node name="ScatterItem" type="Node3D" parent="Main/SmallRocks"]
+script = ExtResource("11_ixl6f")
+source_scale_multiplier = 0.2
+path = "res://assets/small_rock.tscn"
+
+[node name="BoxShape" type="Node3D" parent="Main/SmallRocks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.45215, -0.69077, 5.33222)
+script = ExtResource("12_rsitf")
+shape = SubResource("Resource_68cvd")
+
+[node name="Bush" type="Node3D" parent="Main"]
+script = ExtResource("6_hps5i")
+modifier_stack = SubResource("Resource_842io")
+Performance/use_chunks = true
+Performance/chunk_dimensions = Vector3(15, 15, 15)
+
+[node name="ScatterItem" type="Node3D" parent="Main/Bush"]
+script = ExtResource("11_ixl6f")
+source_scale_multiplier = 1.5
+path = "res://assets/bush.tscn"
+
+[node name="ScatterShape" type="Node3D" parent="Main/Bush"]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -8.1399, 0, -3.98265)
+script = ExtResource("12_rsitf")
+shape = SubResource("Resource_yuq03")
+
+[node name="ScatterShape2" type="Node3D" parent="Main/Bush"]
+script = ExtResource("12_rsitf")
+shape = SubResource("Resource_b8axd")
+
+[node name="FogVolume" type="FogVolume" parent="Main"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5815, -0.399105, -6.8604)
+size = Vector3(96, 3.60633, 74.3019)
+material = SubResource("FogMaterial_8ngmp")
+
+[node name="Campfire" parent="Main" instance=ExtResource("19_vwki1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5215, 0.604417, 0.401461)
+
+[node name="additional fixes" type="Node3D" parent="Main"]
+
+[node name="large_rock" parent="Main/additional fixes" instance=ExtResource("21_0pekr")]
+transform = Transform3D(0.996591, 0.0814247, 0.0132463, -0.0824951, 0.98366, 0.160023, 0, -0.16057, 0.987024, 18.1653, -0.105422, -18.9205)
+
+[node name="pivotCamera" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.2182, 0, -8.9742)
+
+[node name="Camera3D" type="Camera3D" parent="pivotCamera"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 40)
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_splash2_changed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/start" to="Control" method="_on_start_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/aboutUs" to="Control" method="_on_about_us_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/settings" to="Control" method="_on_settings_pressed"]
+[connection signal="pressed" from="Control/SettingsPanel/CenterContainer/MarginContainer/VBoxContainer/top/AspectRatioContainer/exitButton" to="Control" method="_on_exit_button_pressed"]
+[connection signal="item_selected" from="Control/SettingsPanel/CenterContainer/MarginContainer/VBoxContainer/MarginContainer/bottom/resOption" to="Control" method="_on_res_option_item_selected"]
+[connection signal="item_selected" from="Control/SettingsPanel/CenterContainer/MarginContainer/VBoxContainer/MarginContainer/bottom/screenOption" to="Control" method="_on_screen_option_item_selected"]
+[connection signal="item_selected" from="Control/SettingsPanel/CenterContainer/MarginContainer/VBoxContainer/MarginContainer/bottom/langOption" to="Control" method="_on_lang_option_item_selected"]
+[connection signal="mouse_entered" from="Control/cards/cardPic" to="Control/cards" method="_on_card_pic_mouse_entered"]
+[connection signal="mouse_entered" from="Control/cards/cardPic2" to="Control/cards" method="_on_card_pic_2_mouse_entered"]
+[connection signal="mouse_entered" from="Control/cards/cardPic3" to="Control/cards" method="_on_card_pic_3_mouse_entered"]
+[connection signal="finished" from="AspectRatioContainer/splash1" to="." method="_on_splash_1_finished"]
+[connection signal="finished" from="AspectRatioContainer/splash2" to="." method="_on_splash_2_finished"]
+[connection signal="body_entered" from="Main/water/Area3D" to="Main/water" method="_on_area_3d_body_entered"]

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://djp15g8gfwwfr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pec5a"]
+
+[node name="LockOnTargetComponent" type="Area3D" groups=["lockOnTarget"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_pec5a")

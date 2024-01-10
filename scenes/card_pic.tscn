@@ -1,0 +1,80 @@
+[gd_scene load_steps=4 format=3 uid="uid://bum8ckgrg66qg"]
+
+[ext_resource type="Theme" uid="uid://cddj64s53on3i" path="res://assets/theme/MinimalUI.tres" id="1_121wf"]
+[ext_resource type="Script" path="res://scenes/card_pic.gd" id="2_bcp8r"]
+[ext_resource type="Texture2D" uid="uid://0f5u3jke3psk" path="res://cardPic/oped.png" id="3_w1r2a"]
+
+[node name="cardPic" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 350.0
+offset_bottom = 500.0
+theme = ExtResource("1_121wf")
+script = ExtResource("2_bcp8r")
+
+[node name="background" type="Panel" parent="."]
+layout_mode = 1
+offset_right = 350.0
+offset_bottom = 500.0
+
+[node name="MarginContainer" type="MarginContainer" parent="background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="background/MarginContainer"]
+layout_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="background/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="background/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="background/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("3_w1r2a")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="HSeparator" type="HSeparator" parent="background/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="background/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 3
+
+[node name="Label" type="Label" parent="background/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Name"
+
+[node name="VSeparator" type="VSeparator" parent="background/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="nameLabel" type="Label" parent="background/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Obed Bari T."
+
+[node name="Label3" type="Label" parent="background/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "NIM"
+
+[node name="VSeparator2" type="VSeparator" parent="background/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="nimLabel" type="Label" parent="background/MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "707082330166"

@@ -1,0 +1,282 @@
+[gd_scene load_steps=47 format=3 uid="uid://bxbh3j4qq3cef"]
+
+[ext_resource type="Shader" uid="uid://b2ksbgd3loqji" path="res://shaders/Fire/fire.tres" id="1_sgxm1"]
+[ext_resource type="Texture2D" uid="uid://cw3rlk57m3ya2" path="res://shaders/Fire/Flame01.png" id="2_08pcq"]
+[ext_resource type="Texture2D" uid="uid://dedvmr61ss8fb" path="res://shaders/Fire/Voronoi01.png" id="2_g7ji7"]
+[ext_resource type="Texture2D" uid="uid://ctkewmoc68bd6" path="res://shaders/Fire/Flame02.png" id="4_cpftu"]
+[ext_resource type="Shader" uid="uid://crtk3a8r6v171" path="res://shaders/Fire/simpleParticles.tres" id="5_0wa2x"]
+[ext_resource type="Texture2D" uid="uid://d31v4ee51ifoc" path="res://shaders/Fire/Flare00.PNG" id="6_qw3r2"]
+[ext_resource type="Script" path="res://addons/proton_scatter/src/scatter.gd" id="7_2gqv0"]
+[ext_resource type="Script" path="res://addons/proton_scatter/src/stack/modifier_stack.gd" id="8_4m5ll"]
+[ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/create_along_edge_even.gd" id="9_cppsk"]
+[ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/randomize_rotation.gd" id="10_ryo4b"]
+[ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/randomize_transforms.gd" id="11_gy4eh"]
+[ext_resource type="Script" path="res://addons/proton_scatter/src/scatter_item.gd" id="12_62g5n"]
+[ext_resource type="Script" path="res://addons/proton_scatter/src/scatter_shape.gd" id="13_y4j1l"]
+[ext_resource type="Script" path="res://addons/proton_scatter/src/shapes/sphere_shape.gd" id="14_dnbmy"]
+[ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/create_inside_random.gd" id="15_uenqm"]
+[ext_resource type="Script" path="res://addons/proton_scatter/src/modifiers/look_at.gd" id="16_ou3uk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m2w87"]
+render_priority = 0
+shader = ExtResource("1_sgxm1")
+shader_parameter/Dissolve_Tiling = Vector2(0.25, 0.2)
+shader_parameter/Dissolve_Speed = Vector2(0, 0.2)
+shader_parameter/Dissolve_Amount = 0.5
+shader_parameter/Fire_Texture = ExtResource("2_08pcq")
+shader_parameter/Dissolve_Texture = ExtResource("2_g7ji7")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_0x8xm"]
+gravity = Vector3(0, 0, 0)
+color = Color(4, 1.25, 0.6, 1)
+hue_variation_max = 0.05
+
+[sub_resource type="QuadMesh" id="QuadMesh_dwrh1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_21haa"]
+render_priority = 0
+shader = ExtResource("1_sgxm1")
+shader_parameter/Dissolve_Tiling = null
+shader_parameter/Dissolve_Speed = null
+shader_parameter/Dissolve_Amount = null
+shader_parameter/Fire_Texture = ExtResource("4_cpftu")
+shader_parameter/Dissolve_Texture = ExtResource("2_g7ji7")
+
+[sub_resource type="Curve" id="Curve_btxu4"]
+_data = [Vector2(0, 0), 0.0, 4.67188, 0, 0, Vector2(0.248252, 0.990767), 0.0, 0.0, 0, 0, Vector2(1, 0), -1.52344, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_54xpj"]
+curve = SubResource("Curve_btxu4")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kmo3s"]
+emission_shape = 1
+emission_sphere_radius = 0.2
+angular_velocity_min = -360.0
+angular_velocity_max = 360.0
+gravity = Vector3(0, 5, 0)
+damping_min = 0.5
+damping_max = 1.0
+scale_min = 0.75
+scale_max = 1.5
+scale_curve = SubResource("CurveTexture_54xpj")
+color = Color(4, 1.25, 0.6, 1)
+hue_variation_max = 0.1
+
+[sub_resource type="QuadMesh" id="QuadMesh_esopx"]
+
+[sub_resource type="Gradient" id="Gradient_56lx7"]
+offsets = PackedFloat32Array(0, 0.317829, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.901961, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_u3p17"]
+gradient = SubResource("Gradient_56lx7")
+
+[sub_resource type="Curve" id="Curve_ufbxg"]
+_data = [Vector2(0, 0), 0.0, 4.67188, 0, 0, Vector2(0.248252, 0.990767), 0.0, 0.0, 0, 0, Vector2(1, 0), -1.52344, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_qtvgk"]
+curve = SubResource("Curve_ufbxg")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_aoq2f"]
+emission_shape = 1
+emission_sphere_radius = 0.4
+angular_velocity_min = -360.0
+angular_velocity_max = 360.0
+gravity = Vector3(0, 5, 0)
+damping_min = 0.5
+damping_max = 1.0
+scale_max = 2.0
+scale_curve = SubResource("CurveTexture_qtvgk")
+color = Color(0, 0, 0, 1)
+color_ramp = SubResource("GradientTexture1D_u3p17")
+hue_variation_max = 0.1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lh2fc"]
+render_priority = 0
+shader = ExtResource("5_0wa2x")
+shader_parameter/Texture = ExtResource("6_qw3r2")
+
+[sub_resource type="Gradient" id="Gradient_2tyew"]
+offsets = PackedFloat32Array(0.771318, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_o0sss"]
+gradient = SubResource("Gradient_2tyew")
+
+[sub_resource type="Curve" id="Curve_h2n8h"]
+min_value = -1.0
+_data = [Vector2(0, 1), 0.0, -2.0847, 0, 0, Vector2(0.993007, 0.224432), 0.294767, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_gj376"]
+curve = SubResource("Curve_h2n8h")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_p7f8x"]
+emission_shape = 1
+emission_sphere_radius = 0.6
+angle_min = 0.1
+angle_max = 0.2
+gravity = Vector3(0, 5, 0)
+scale_min = 0.01
+scale_max = 0.12
+color = Color(4, 1.25, 0.6, 1)
+color_ramp = SubResource("GradientTexture1D_o0sss")
+hue_variation_max = 0.1
+hue_variation_curve = SubResource("CurveTexture_gj376")
+turbulence_enabled = true
+turbulence_noise_strength = 2.0
+turbulence_noise_scale = 4.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_5itex"]
+
+[sub_resource type="Resource" id="Resource_r35be"]
+script = ExtResource("9_cppsk")
+spacing = 0.4
+offset = 0.04
+align_to_path = false
+align_up_axis = Vector3(0, 1, 0)
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = false
+reference_frame = 0
+
+[sub_resource type="Resource" id="Resource_2atpf"]
+script = ExtResource("10_ryo4b")
+rotation = Vector3(360, 360, 360)
+snap_angle = Vector3(0, 0, 0)
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = false
+reference_frame = 2
+
+[sub_resource type="Resource" id="Resource_pyxls"]
+script = ExtResource("11_gy4eh")
+position = Vector3(0, 0.1, 0)
+rotation = Vector3(0, 0, 0)
+scale = Vector3(0.2, 0.2, 0.2)
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = false
+reference_frame = 2
+
+[sub_resource type="Resource" id="Resource_afw1r"]
+script = ExtResource("8_4m5ll")
+stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_r35be"), SubResource("Resource_2atpf"), SubResource("Resource_pyxls")])
+
+[sub_resource type="Resource" id="Resource_dtdn4"]
+script = ExtResource("14_dnbmy")
+radius = 0.81545
+
+[sub_resource type="Resource" id="Resource_qpkh3"]
+script = ExtResource("15_uenqm")
+amount = 50
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = true
+reference_frame = 1
+
+[sub_resource type="Resource" id="Resource_e227e"]
+script = ExtResource("16_ou3uk")
+target = Vector3(0, 0, 0)
+up = Vector3(0, 1, 0)
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = false
+reference_frame = 0
+
+[sub_resource type="Resource" id="Resource_bewlt"]
+script = ExtResource("11_gy4eh")
+position = Vector3(0, 0, 0)
+rotation = Vector3(20, 360, 20)
+scale = Vector3(1, 1, 1)
+enabled = true
+override_global_seed = false
+custom_seed = 0
+restrict_height = false
+reference_frame = 2
+
+[sub_resource type="Resource" id="Resource_2o56k"]
+script = ExtResource("8_4m5ll")
+stack = Array[Resource("res://addons/proton_scatter/src/modifiers/base_modifier.gd")]([SubResource("Resource_qpkh3"), SubResource("Resource_e227e"), SubResource("Resource_bewlt")])
+
+[sub_resource type="Resource" id="Resource_6wf80"]
+script = ExtResource("14_dnbmy")
+radius = 0.498456
+
+[node name="Campfire" type="Node3D"]
+
+[node name="StaticFlame" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.343056, 0)
+visible = false
+material_override = SubResource("ShaderMaterial_m2w87")
+amount = 1
+lifetime = 5.0
+process_material = SubResource("ParticleProcessMaterial_0x8xm")
+draw_pass_1 = SubResource("QuadMesh_dwrh1")
+
+[node name="DynamicFlame" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.173659, 0)
+material_override = SubResource("ShaderMaterial_21haa")
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_kmo3s")
+draw_pass_1 = SubResource("QuadMesh_esopx")
+
+[node name="Smoke" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.173659, 0)
+sorting_offset = -1.0
+material_override = SubResource("ShaderMaterial_21haa")
+amount = 20
+lifetime = 2.0
+process_material = SubResource("ParticleProcessMaterial_aoq2f")
+draw_pass_1 = SubResource("QuadMesh_esopx")
+
+[node name="FloatingParticles" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+sorting_offset = 1.0
+material_override = SubResource("ShaderMaterial_lh2fc")
+amount = 50
+lifetime = 2.5
+process_material = SubResource("ParticleProcessMaterial_p7f8x")
+draw_pass_1 = SubResource("QuadMesh_5itex")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.285997, 0)
+light_color = Color(1, 0.776471, 0.521569, 1)
+
+[node name="rocks" type="Node3D" parent="."]
+script = ExtResource("7_2gqv0")
+modifier_stack = SubResource("Resource_afw1r")
+Performance/use_chunks = true
+Performance/chunk_dimensions = Vector3(15, 15, 15)
+
+[node name="ScatterItem" type="Node3D" parent="rocks"]
+script = ExtResource("12_62g5n")
+source_scale_multiplier = 0.8
+path = "res://assets/small_rock.tscn"
+
+[node name="ScatterShape" type="Node3D" parent="rocks"]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
+script = ExtResource("13_y4j1l")
+shape = SubResource("Resource_dtdn4")
+
+[node name="ProtonScatter" type="Node3D" parent="."]
+script = ExtResource("7_2gqv0")
+modifier_stack = SubResource("Resource_2o56k")
+Performance/use_chunks = true
+Performance/chunk_dimensions = Vector3(15, 15, 15)
+
+[node name="ScatterItem" type="Node3D" parent="ProtonScatter"]
+script = ExtResource("12_62g5n")
+path = "res://assets/dead_branch.tscn"
+
+[node name="ScatterShape" type="Node3D" parent="ProtonScatter"]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 0, 0)
+script = ExtResource("13_y4j1l")
+shape = SubResource("Resource_6wf80")
